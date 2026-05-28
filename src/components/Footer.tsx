@@ -43,7 +43,7 @@ export default function Footer({ onLinkClick }: FooterProps) {
             {/* Social icons */}
             <div className="flex items-center gap-3 pt-2">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/share/1Cctr2CWfk/"
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:text-blue-600 hover:shadow-xs hover:border-blue-200 transition-all duration-300"
@@ -52,7 +52,7 @@ export default function Footer({ onLinkClick }: FooterProps) {
                 <Facebook className="w-4 h-4" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/aabshar_org/"
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:text-pink-600 hover:shadow-xs hover:border-pink-200 transition-all duration-300"
