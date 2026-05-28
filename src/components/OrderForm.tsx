@@ -101,7 +101,7 @@ export default function OrderForm({ selectedSize, onSizeChange }: OrderFormProps
   };
 
   return (
-    <section id="contact" className="py-24 bg-white relative overflow-hidden border-t border-slate-100">
+    <section id="contact" className="py-24 bg-gradient-to-b from-white via-sky-50/20 to-white relative overflow-hidden spotlight-glow border-t border-slate-100/30">
       {/* Top Wave Divider Representing Safe Purified Flow */}
       <div className="absolute top-0 inset-x-0 h-10 overflow-hidden pointer-events-none z-1 select-none opacity-40">
         <svg viewBox="0 0 1440 74" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto min-w-[1000px]">
@@ -196,7 +196,7 @@ export default function OrderForm({ selectedSize, onSizeChange }: OrderFormProps
 
           {/* Right Column: Dynamic Form Container with animations */}
           <div className="lg:col-span-12 xl:col-span-7">
-            <div className="bg-white border border-slate-200 rounded-3xl p-8 sm:p-10 shadow-2xl relative overflow-hidden min-h-[500px] flex flex-col justify-center">
+            <div className="bg-white/80 backdrop-blur-md border border-white/45 rounded-3xl p-8 sm:p-10 shadow-3d inner-highlight relative overflow-hidden min-h-[500px] flex flex-col justify-center">
               
               <AnimatePresence mode="wait">
                 {!isSubmitted ? (
@@ -422,7 +422,7 @@ export default function OrderForm({ selectedSize, onSizeChange }: OrderFormProps
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full py-4 px-6 bg-linear-to-r from-brand-teal to-brand-aqua hover:brightness-110 font-bold text-sm tracking-widest text-white uppercase rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.01] active:scale-95 cursor-pointer disabled:opacity-50 border-0 flex items-center justify-center gap-2"
+                      className="w-full py-4 px-6 bg-linear-to-r from-brand-teal to-brand-aqua hover:brightness-110 font-bold text-sm tracking-widest text-white uppercase rounded-xl shadow-btn-glow hover:shadow-btn-glow border-t border-white/35 transition-all duration-300 press-scale cursor-pointer disabled:opacity-50 flex items-center justify-center gap-2"
                     >
                       {isSubmitting ? (
                         <>

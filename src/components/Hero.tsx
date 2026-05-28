@@ -12,25 +12,25 @@ export default function Hero({ onOrderClick, onExploreClick }: HeroProps) {
   return (
     <section
       id="hero"
-      className="relative min-h-screen pt-28 pb-16 md:pt-36 flex items-center justify-center bg-radial-gradient overflow-hidden"
+      className="relative min-h-screen pt-28 pb-16 md:pt-36 flex items-center justify-center bg-radial-gradient noise-overlay spotlight-glow overflow-hidden"
     >
       {/* Background visual graphics */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-teal/5 rounded-full blur-[120px] pointer-events-none animate-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-aqua/5 rounded-full blur-[150px] pointer-events-none animate-pulse duration-5000" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-teal/5 rounded-full blur-[120px] pointer-events-none animate-pulse" style={{ transform: 'translateZ(-150px)' }} />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-aqua/5 rounded-full blur-[150px] pointer-events-none animate-pulse duration-5000" style={{ transform: 'translateZ(-120px)' }} />
       
       {/* Wave element overlay */}
       <div className="absolute inset-x-0 bottom-0 h-40 water-gradient pointer-events-none z-1" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full" style={{ transformStyle: 'preserve-3d', perspective: '1200px' }}>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center" style={{ transformStyle: 'preserve-3d' }}>
           
           {/* Left Column: Hero Text & CTAs */}
-          <div className="lg:col-span-7 flex flex-col justify-center text-left">
+          <div className="lg:col-span-7 flex flex-col justify-center text-left" style={{ transform: 'translateZ(20px)', transformStyle: 'preserve-3d' }}>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-teal/10 border border-brand-teal/30 text-brand-teal font-sans font-semibold text-xs sm:text-sm mb-6 max-w-max"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-teal/10 border border-brand-teal/20 text-brand-teal font-sans font-semibold text-xs sm:text-sm mb-6 max-w-max shadow-sm"
             >
               <Sparkles className="w-4 h-4 text-brand-teal animate-spin-slow" />
               <span>Premium Balanced Mineral Water — TDS 120–160</span>
@@ -40,7 +40,7 @@ export default function Hero({ onOrderClick, onExploreClick }: HeroProps) {
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="font-serif text-5xl sm:text-6xl lg:text-7.5xl font-extrabold text-slate-900 tracking-tight leading-none mb-6 text-glow"
+              className="font-display text-5xl sm:text-6xl lg:text-7.5xl font-extrabold text-slate-800 tracking-tight leading-none mb-6 text-glow"
             >
               Pure. Natural.<br />
               <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-teal to-brand-aqua">
@@ -63,11 +63,12 @@ export default function Hero({ onOrderClick, onExploreClick }: HeroProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-4 mb-10"
+              style={{ transform: 'translateZ(15px)' }}
             >
               <button
                 id="hero-order-cta"
                 onClick={onOrderClick}
-                className="w-full sm:w-auto text-center px-8 py-4 bg-linear-to-r from-brand-teal to-brand-aqua hover:brightness-110 font-bold text-base text-white rounded-full shadow-[0_8px_30px_rgba(2,132,199,0.2)] hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer"
+                className="w-full sm:w-auto text-center px-8 py-4 bg-linear-to-r from-brand-teal to-brand-aqua hover:brightness-110 font-bold text-base text-white rounded-full shadow-btn-glow hover:shadow-btn-glow border-t border-white/35 active:scale-95 transition-all duration-300 press-scale cursor-pointer"
               >
                 Order Doorstep Delivery
               </button>
@@ -75,25 +76,26 @@ export default function Hero({ onOrderClick, onExploreClick }: HeroProps) {
               <button
                 id="hero-explore-cta"
                 onClick={onExploreClick}
-                className="w-full sm:w-auto text-center px-8 py-4 bg-slate-100 hover:bg-slate-200 border border-slate-200 font-bold text-base text-slate-800 rounded-full hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer flex items-center justify-center gap-2"
+                className="w-full sm:w-auto text-center px-8 py-4 bg-white/75 backdrop-blur-md border border-slate-200/50 hover:bg-white/95 font-bold text-base text-slate-800 rounded-full active:scale-95 transition-all duration-300 press-scale shadow-sm cursor-pointer flex items-center justify-center gap-2"
               >
                 Explore Products
                 <ArrowRight className="w-4 h-4 text-brand-teal" />
               </button>
             </motion.div>
 
-            {/* Quick trust badges */}
+            {/* Quick trust badges - styled glassmorphic */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.4 }}
-              className="grid grid-cols-3 gap-3 max-w-xl pt-6 border-t border-slate-100"
+              className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-xl p-5 sm:p-6 bg-white/45 backdrop-blur-md border border-white/30 rounded-3xl shadow-3d inner-highlight"
+              style={{ transform: 'translateZ(10px)' }}
             >
               <div className="flex items-center gap-2.5">
                 <div className="flex-shrink-0 w-8 h-8 rounded-full bg-brand-teal/10 flex items-center justify-center text-brand-teal font-sans">
                   <span className="font-bold text-xs">TDS</span>
                 </div>
-                <div>
+                <div className="text-left">
                   <h4 className="font-sans text-slate-800 text-xs sm:text-sm font-semibold">120–160 Value</h4>
                   <p className="font-sans text-[10px] sm:text-xs text-slate-500">Balanced Minerals</p>
                 </div>
@@ -103,9 +105,9 @@ export default function Hero({ onOrderClick, onExploreClick }: HeroProps) {
                 <div className="flex-shrink-0 w-8 h-8 rounded-full bg-brand-teal/10 flex items-center justify-center text-brand-teal">
                   <ShieldCheck className="w-4.5 h-4.5" />
                 </div>
-                <div>
+                <div className="text-left">
                   <h4 className="font-sans text-slate-800 text-xs sm:text-sm font-semibold">Lab Verified</h4>
-                  <p className="font-sans text-[10px] sm:text-xs text-slate-500">100% Guaranteed Pure</p>
+                  <p className="font-sans text-[10px] sm:text-xs text-slate-500">100% Pure</p>
                 </div>
               </div>
 
@@ -113,28 +115,29 @@ export default function Hero({ onOrderClick, onExploreClick }: HeroProps) {
                 <div className="flex-shrink-0 w-8 h-8 rounded-full bg-brand-teal/10 flex items-center justify-center text-brand-teal">
                   <Truck className="w-4.5 h-4.5" />
                 </div>
-                <div>
+                <div className="text-left">
                   <h4 className="font-sans text-slate-800 text-xs sm:text-sm font-semibold">Cold Delivery</h4>
-                  <p className="font-sans text-[10px] sm:text-xs text-slate-500">Rawalpindi/Islamabad</p>
+                  <p className="font-sans text-[10px] sm:text-xs text-slate-500">Water Fleet</p>
                 </div>
               </div>
             </motion.div>
           </div>
 
           {/* Right Column: High-fidelity SACRED bottle image composition */}
-          <div className="lg:col-span-5 flex justify-center lg:justify-end select-none">
+          <div className="lg:col-span-5 flex justify-center lg:justify-end select-none" style={{ transform: 'translateZ(10px)', transformStyle: 'preserve-3d' }}>
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.1 }}
               className="relative max-w-lg w-full flex items-center justify-center py-8"
+              style={{ transformStyle: 'preserve-3d' }}
             >
               {/* Radial gradient glow background beneath bottle */}
-              <div className="absolute inset-0 m-auto w-72 h-72 bg-radial-gradient blur-xs animate-slow-spin rounded-full opacity-30 select-none pointer-events-none" />
-              <div className="absolute bg-brand-aqua/10 w-56 h-56 rounded-full filter blur-[70px] mix-blend-multiply opacity-50 select-none animate-pulse" />
+              <div className="absolute inset-0 m-auto w-72 h-72 bg-radial-gradient blur-xs animate-slow-spin rounded-full opacity-30 select-none pointer-events-none" style={{ transform: 'translateZ(-40px)' }} />
+              <div className="absolute bg-brand-aqua/10 w-56 h-56 rounded-full filter blur-[70px] mix-blend-multiply opacity-50 select-none animate-pulse" style={{ transform: 'translateZ(-30px)' }} />
               
               {/* Composition of both 1.5L and 500ml bottles */}
-              <div className="relative flex items-end justify-center h-[430px] sm:h-[500px] md:h-[580px] w-full pb-4">
+              <div className="relative flex items-end justify-center h-[430px] sm:h-[500px] md:h-[580px] w-full pb-4" style={{ transformStyle: 'preserve-3d' }}>
                 {/* 1.5L Bottle standing taller in the back-right */}
                 <img
                   src={bottleImage15L}
@@ -153,9 +156,12 @@ export default function Hero({ onOrderClick, onExploreClick }: HeroProps) {
               </div>
               
               {/* Elegant floating circular badge */}
-              <div className="absolute bottom-16 left-2 md:left-6 bg-white/95 border border-brand-teal/30 backdrop-blur-md p-3 sm:p-4 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] z-30 animate-float [animation-delay:2s] text-left">
+              <div 
+                className="absolute bottom-16 left-2 md:left-6 bg-white/95 border border-brand-teal/30 backdrop-blur-md p-3 sm:p-4 rounded-xl shadow-3d z-30 animate-float [animation-delay:2s] text-left inner-highlight"
+                style={{ transform: 'translateZ(65px)' }}
+              >
                 <p className="font-sans text-[10px] sm:text-xs text-brand-teal uppercase tracking-wider font-bold">Health Factor</p>
-                <p className="font-serif text-base sm:text-lg text-slate-800 font-bold">100% Certified Pure</p>
+                <p className="font-display text-base sm:text-lg text-slate-800 font-bold">100% Certified Pure</p>
                 <p className="font-sans text-[10px] sm:text-xs text-slate-500">Perfect Mineral Balance</p>
               </div>
             </motion.div>

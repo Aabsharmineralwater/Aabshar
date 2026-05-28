@@ -11,7 +11,7 @@ export default function Footer({ onLinkClick }: FooterProps) {
   };
 
   return (
-    <footer className="bg-slate-50 border-t border-slate-100 pt-16 pb-10 relative overflow-hidden font-sans">
+    <footer className="bg-slate-950 border-t border-slate-950 pt-16 pb-10 relative overflow-hidden font-sans text-slate-400 noise-overlay dark-mesh-bg">
       {/* Background design elements */}
       <div className="absolute top-0 right-0 w-80 h-80 bg-brand-teal/5 rounded-full filter blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-60 h-60 bg-brand-aqua/4 rounded-full filter blur-3xl pointer-events-none" />
@@ -33,7 +33,7 @@ export default function Footer({ onLinkClick }: FooterProps) {
             <p className="font-serif italic text-base font-bold text-brand-teal">
               Pure. Natural. Refreshing.
             </p>
-            <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
               Premium mineral water delivered fresh to your doorstep.
             </p>
             
@@ -73,37 +73,37 @@ export default function Footer({ onLinkClick }: FooterProps) {
 
           {/* Column 2 — Quick Links */}
           <div className="flex flex-col items-start gap-4">
-            <h4 className="font-serif text-sm font-bold text-slate-800 uppercase tracking-wider relative after:content-[''] after:block after:w-8 after:h-0.5 after:bg-brand-teal after:mt-1.5">
+            <h4 className="font-serif text-sm font-bold text-white uppercase tracking-wider relative after:content-[''] after:block after:w-8 after:h-0.5 after:bg-brand-teal after:mt-1.5">
               Quick Links
             </h4>
             <div className="flex flex-col gap-2.5 text-left items-start">
               <button
                 onClick={() => handleLinkClick('#hero')}
-                className="text-xs sm:text-sm text-slate-500 hover:text-brand-teal hover:translate-x-1 transition-all cursor-pointer bg-transparent border-0 py-0"
+                className="text-xs sm:text-sm text-slate-450 hover:text-brand-teal hover:translate-x-1 transition-all cursor-pointer bg-transparent border-0 py-0"
               >
                 Home
               </button>
               <button
                 onClick={() => handleLinkClick('#products')}
-                className="text-xs sm:text-sm text-slate-500 hover:text-brand-teal hover:translate-x-1 transition-all cursor-pointer bg-transparent border-0 py-0"
+                className="text-xs sm:text-sm text-slate-450 hover:text-brand-teal hover:translate-x-1 transition-all cursor-pointer bg-transparent border-0 py-0"
               >
                 Products
               </button>
               <button
                 onClick={() => handleLinkClick('#b2b')}
-                className="text-xs sm:text-sm text-slate-500 hover:text-brand-teal hover:translate-x-1 transition-all cursor-pointer bg-transparent border-0 py-0"
+                className="text-xs sm:text-sm text-slate-450 hover:text-brand-teal hover:translate-x-1 transition-all cursor-pointer bg-transparent border-0 py-0"
               >
                 B2B Service
               </button>
               <button
                 onClick={() => handleLinkClick('#about')}
-                className="text-xs sm:text-sm text-slate-500 hover:text-brand-teal hover:translate-x-1 transition-all cursor-pointer bg-transparent border-0 py-0"
+                className="text-xs sm:text-sm text-slate-450 hover:text-brand-teal hover:translate-x-1 transition-all cursor-pointer bg-transparent border-0 py-0"
               >
                 About Us
               </button>
               <button
                 onClick={() => handleLinkClick('#contact')}
-                className="text-xs sm:text-sm text-slate-500 hover:text-brand-teal hover:translate-x-1 transition-all cursor-pointer bg-transparent border-0 py-0"
+                className="text-xs sm:text-sm text-slate-450 hover:text-brand-teal hover:translate-x-1 transition-all cursor-pointer bg-transparent border-0 py-0"
               >
                 Contact
               </button>
@@ -112,10 +112,10 @@ export default function Footer({ onLinkClick }: FooterProps) {
 
           {/* Column 3 — Our Products */}
           <div className="flex flex-col items-start gap-4">
-            <h4 className="font-serif text-sm font-bold text-slate-800 uppercase tracking-wider relative after:content-[''] after:block after:w-8 after:h-0.5 after:bg-brand-teal after:mt-1.5">
+            <h4 className="font-serif text-sm font-bold text-white uppercase tracking-wider relative after:content-[''] after:block after:w-8 after:h-0.5 after:bg-brand-teal after:mt-1.5 font-display">
               Our Products
             </h4>
-            <ul className="flex flex-col gap-2.5 text-slate-500 text-xs sm:text-sm text-left">
+            <ul className="flex flex-col gap-2.5 text-slate-400 text-xs sm:text-sm text-left">
               <li className="cursor-pointer hover:text-brand-teal transition-colors" onClick={() => handleLinkClick('#products')}>
                 500ml Mineral Water Bottle
               </li>
@@ -133,10 +133,10 @@ export default function Footer({ onLinkClick }: FooterProps) {
 
           {/* Column 4 — Contact Us */}
           <div className="flex flex-col items-start gap-4">
-            <h4 className="font-serif text-sm font-bold text-slate-800 uppercase tracking-wider relative after:content-[''] after:block after:w-8 after:h-0.5 after:bg-brand-teal after:mt-1.5">
+            <h4 className="font-serif text-sm font-bold text-white uppercase tracking-wider relative after:content-[''] after:block after:w-8 after:h-0.5 after:bg-brand-teal after:mt-1.5 font-display">
               Contact Us
             </h4>
-            <ul className="flex flex-col gap-3 text-slate-500 text-xs sm:text-sm text-left">
+            <ul className="flex flex-col gap-3 text-slate-400 text-xs sm:text-sm text-left">
               <li className="flex items-start gap-2">
                 <span className="flex-shrink-0 text-amber-500">📍</span>
                 <span><strong>Serving:</strong> Rawalpindi, Islamabad, Fateh Jang</span>
@@ -159,11 +159,11 @@ export default function Footer({ onLinkClick }: FooterProps) {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-slate-200/60 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-          <p className="font-sans">
+        <div className="border-t border-white/10 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+          <p className="font-sans text-slate-400">
             © 2026 Aabshar Mineral Water. All Rights Reserved.
           </p>
-          <p className="flex items-center gap-1 font-medium text-slate-500">
+          <p className="flex items-center gap-1 font-medium text-slate-450">
             Made with <span className="text-teal-500 animate-pulse">💧</span> in Pakistan
           </p>
         </div>

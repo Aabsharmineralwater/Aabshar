@@ -16,7 +16,7 @@ export default function Delivery() {
   ];
 
   return (
-    <section id="delivery" className="py-24 bg-slate-50 relative overflow-hidden border-t border-slate-100">
+    <section id="delivery" className="py-24 bg-gradient-to-b from-white via-sky-50/20 to-white relative overflow-hidden spotlight-glow border-t border-slate-100/30">
       {/* Top Wave Divider for Organic Flow */}
       <div className="absolute top-0 inset-x-0 h-10 overflow-hidden pointer-events-none z-1 select-none opacity-40">
         <svg viewBox="0 0 1440 74" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto min-w-[1000px]">
@@ -93,7 +93,7 @@ export default function Delivery() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-white border border-slate-100 rounded-3xl p-8 sm:p-10 flex-grow shadow-[0_4px_30px_rgba(2,132,199,0.04)]"
+              className="bg-white/80 backdrop-blur-md border border-white/45 rounded-3xl p-8 sm:p-10 flex-grow shadow-3d hover-lift tilt-card inner-highlight"
             >
               <div className="flex items-center justify-between pb-6 border-b border-slate-100 mb-8">
                 <div className="flex items-center gap-3">
@@ -151,7 +151,7 @@ export default function Delivery() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-white border border-slate-100 rounded-3xl p-8 sm:p-10 flex-grow flex flex-col justify-between shadow-[0_4px_30px_rgba(2,132,199,0.04)]"
+              className="bg-white/80 backdrop-blur-md border border-white/45 rounded-3xl p-8 sm:p-10 flex-grow flex flex-col justify-between shadow-3d hover-lift tilt-card inner-highlight"
             >
               <div>
                 <div className="flex items-center justify-between pb-6 border-b border-slate-100 mb-8">

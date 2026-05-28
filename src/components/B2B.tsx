@@ -47,7 +47,7 @@ const RealBottleMockupCard = ({
   tagline: string;
 }) => {
   return (
-    <div className="flex flex-col items-center bg-white border border-slate-100/80 rounded-3xl p-5 sm:p-6 shadow-sm hover:shadow-xl hover:border-brand-teal/20 transition-all duration-500 hover:-translate-y-2 group w-full max-w-sm relative overflow-hidden">
+    <div className="flex flex-col items-center bg-white/75 backdrop-blur-md border border-white/45 rounded-3xl p-5 sm:p-6 shadow-3d hover-lift tilt-card inner-highlight transition-all duration-500 group w-full max-w-sm relative overflow-hidden">
       {/* Background glow visual accent */}
       <div className="absolute top-0 right-0 w-24 h-24 bg-brand-teal/5 rounded-full filter blur-xl pointer-events-none group-hover:bg-brand-teal/10 transition-colors" />
       
@@ -309,7 +309,7 @@ export default function B2B({ onQuoteClick }: B2BProps) {
   };
 
   return (
-    <section id="b2b" className="py-24 bg-gradient-to-b from-slate-50 via-teal-50/20 to-slate-100 text-slate-800 relative overflow-hidden border-t border-slate-200">
+    <section id="b2b" className="py-24 bg-gradient-to-b from-slate-50/40 via-sky-50/20 to-white text-slate-800 relative overflow-hidden spotlight-glow border-t border-slate-150">
       
       {/* Soft and subtle light organic ambient gradients */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-brand-teal/5 rounded-full blur-[140px] pointer-events-none" />
@@ -544,7 +544,7 @@ export default function B2B({ onQuoteClick }: B2BProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white border border-slate-200/80 rounded-3xl p-8 sm:p-12 relative overflow-hidden shadow-xl"
+            className="bg-white/80 backdrop-blur-md border border-white/45 rounded-3xl p-8 sm:p-12 shadow-3d inner-highlight relative overflow-hidden"
           >
             {/* Top accent visual border line */}
             <div className="absolute top-0 inset-x-0 h-[4px] bg-gradient-to-r from-brand-teal to-brand-aqua" />
@@ -736,7 +736,7 @@ export default function B2B({ onQuoteClick }: B2BProps) {
                       id="b2b-submit-btn"
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full py-4 bg-gradient-to-r from-brand-teal to-brand-aqua disabled:from-slate-300 disabled:to-slate-400 disabled:cursor-not-allowed text-white font-black uppercase tracking-widest text-sm rounded-xl shadow-lg shadow-brand-teal/15 hover:shadow-brand-teal/25 hover:brightness-105 active:scale-98 transition-all cursor-pointer flex items-center justify-center gap-2 border-0"
+                      className="w-full py-4 bg-gradient-to-r from-brand-teal to-brand-aqua disabled:from-slate-300 disabled:to-slate-400 disabled:cursor-not-allowed text-white font-black uppercase tracking-widest text-sm rounded-xl shadow-btn-glow hover:shadow-btn-glow border-t border-white/35 transition-all duration-300 press-scale cursor-pointer flex items-center justify-center gap-2"
                     >
                       {isSubmitting ? (
                         <>

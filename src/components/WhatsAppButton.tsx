@@ -21,7 +21,7 @@ export default function WhatsAppButton() {
         <button
           id="whatsapp-floating-cta"
           onClick={handleClick}
-          className="relative flex items-center justify-center w-[60px] h-[60px] rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 animate-whatsapp-pulse cursor-pointer border-0"
+          className="relative flex items-center justify-center w-[60px] h-[60px] rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white shadow-2xl active:scale-95 transition-all duration-300 animate-whatsapp-pulse cursor-pointer border-0"
           aria-label="Chat on WhatsApp"
         >
           {/* High quality clean WhatsApp vector logo */}

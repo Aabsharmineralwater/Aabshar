@@ -28,7 +28,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <section id="testimonials" className="py-24 bg-white relative overflow-hidden border-t border-slate-100">
+    <section id="testimonials" className="py-24 bg-gradient-to-b from-white via-sky-50/20 to-white relative overflow-hidden spotlight-glow border-t border-slate-100">
       {/* Top Wave Segment */}
       <div className="absolute top-0 inset-x-0 h-10 overflow-hidden pointer-events-none z-1 select-none opacity-40">
         <svg viewBox="0 0 1440 74" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto min-w-[1000px]">
@@ -101,7 +101,7 @@ export default function Testimonials() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
               whileHover={{ y: -5 }}
-              className="bg-white border border-slate-100 rounded-3xl p-8 hover:border-brand-teal/35 hover:bg-slate-50/50 transition-all duration-300 shadow-[0_4px_30px_rgba(2,132,199,0.03)] flex flex-col justify-between relative group"
+              className="bg-white/80 backdrop-blur-md rounded-3xl border border-white/45 p-8 shadow-3d hover-lift tilt-card inner-highlight flex flex-col justify-between relative group"
             >
               {/* Decorative Quotation Symbol */}
               <div className="absolute top-6 right-8 text-sky-200/50 group-hover:text-brand-teal/10 transition-colors duration-350">

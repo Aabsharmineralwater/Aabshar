@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import WhyUs from './components/WhyUs';
@@ -9,6 +9,7 @@ import Testimonials from './components/Testimonials';
 import OrderForm from './components/OrderForm';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
+import BottomNav from './components/BottomNav';
 import { motion, AnimatePresence } from 'motion/react';
 
 export default function App() {
@@ -41,7 +42,7 @@ export default function App() {
         <div className="absolute bottom-[-10%] left-[-10%] w-[60%] h-[60%] bg-brand-aqua/5 rounded-full blur-[180px] animate-pulse" style={{ animationDuration: '8000ms' }} />
       </div>
 
-      <div className="relative z-10 flex flex-col min-h-screen">
+      <div className="relative z-10 flex flex-col min-h-screen pb-16 md:pb-0">
         {/* Navbar */}
         <Navbar onOrderClick={() => {
           const WHATSAPP_NUMBER = '923051999897';
@@ -60,7 +61,7 @@ export default function App() {
         />
 
         {/* Trust signal stats banner */}
-        <div className="bg-gradient-to-r from-sky-50 via-sky-100/60 to-sky-50 border-y border-sky-100 py-6 sm:py-8 font-sans overflow-hidden">
+        <div className="bg-gradient-to-r from-white/60 via-sky-50/45 to-white/60 backdrop-blur-md border-y border-white/50 py-6 sm:py-8 font-sans overflow-hidden shadow-inner-light">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
               <div className="space-y-1">
@@ -108,6 +109,9 @@ export default function App() {
 
         {/* Pulsing floating WhatsApp helper bottom-right */}
         <WhatsAppButton />
+
+        {/* Fixed Mobile Bottom Navigation */}
+        <BottomNav onLinkClick={scrollToSection} />
       </div>
 
     </div>

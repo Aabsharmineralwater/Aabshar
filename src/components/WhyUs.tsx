@@ -31,7 +31,7 @@ export default function WhyUs() {
   ];
 
   return (
-    <section id="about" className="py-24 bg-white relative overflow-hidden">
+    <section id="about" className="py-24 bg-gradient-to-b from-white via-sky-50/40 to-white relative overflow-hidden">
       {/* Top Wave Divider Representing Pristine Flow */}
       <div className="absolute top-0 inset-x-0 h-10 overflow-hidden pointer-events-none z-1 select-none opacity-40">
         <svg viewBox="0 0 1440 74" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto min-w-[1000px]">
@@ -106,7 +106,7 @@ export default function WhyUs() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -8, transition: { duration: 0.2 } }}
-              className="bg-white border border-slate-100 rounded-3xl p-8 hover:border-brand-teal/30 hover:bg-slate-50/50 transition-all duration-300 shadow-[0_4px_24px_rgba(2,132,199,0.03)] relative group overflow-hidden"
+              className="bg-white/75 backdrop-blur-md border border-white/45 rounded-3xl p-8 hover:border-brand-teal/40 transition-all duration-300 shadow-3d hover-lift tilt-card inner-highlight relative group overflow-hidden"
             >
               {/* Subtle accent hover indicator in card top corner */}
               <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-brand-teal to-brand-aqua scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
@@ -136,7 +136,7 @@ export default function WhyUs() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mt-20 p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-sky-50 to-white border border-sky-100 relative overflow-hidden shadow-[0_4px_30px_rgba(2,132,199,0.04)]"
+          className="mt-20 p-8 sm:p-12 rounded-3xl bg-white/75 backdrop-blur-md border border-white/45 shadow-3d hover-lift tilt-card inner-highlight relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-64 h-64 bg-brand-teal/5 rounded-full blur-3xl pointer-events-none" />
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">

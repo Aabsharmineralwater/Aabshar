@@ -46,7 +46,7 @@ export default function Products({ onOrderProduct }: ProductsProps) {
   ];
 
   return (
-    <section id="products" className="py-24 bg-slate-50 relative overflow-hidden border-t border-slate-100">
+    <section id="products" className="py-24 bg-gradient-to-b from-sky-50/20 via-sky-50/60 to-white relative overflow-hidden spotlight-glow border-t border-slate-100/30">
       {/* Background graphics */}
       <div className="absolute top-1/2 right-0 w-96 h-96 bg-brand-aqua/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-brand-teal/5 rounded-full blur-[100px] pointer-events-none" />
@@ -101,7 +101,7 @@ export default function Products({ onOrderProduct }: ProductsProps) {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-[0_4px_30px_rgba(2,132,199,0.05)] flex flex-col hover:border-brand-teal/35 hover:shadow-2xl transition-all duration-500 relative group"
+              className="bg-white/80 backdrop-blur-md rounded-3xl border border-white/45 overflow-hidden shadow-3d flex flex-col hover-lift tilt-card inner-highlight transition-all duration-500 relative group"
             >
               {/* Size Badge Layer */}
               <div className="absolute top-6 left-6 z-20">
@@ -111,7 +111,7 @@ export default function Products({ onOrderProduct }: ProductsProps) {
               </div>
 
               {/* Top part: SACRED Bottle Graphic */}
-              <div className="relative h-96 bg-sky-50/20 flex items-center justify-center p-8 border-b border-slate-100 overflow-hidden">
+              <div className="relative h-96 bg-linear-to-b from-sky-50/40 to-teal-50/20 flex items-center justify-center p-8 border-b border-white/20 overflow-hidden">
                 {/* Visual circle accent in card background */}
                 <div className="absolute w-64 h-64 bg-brand-teal/5 rounded-full blur-xl pointer-events-none group-hover:scale-110 transition-transform duration-500" />
                 
@@ -163,7 +163,7 @@ export default function Products({ onOrderProduct }: ProductsProps) {
                   <button
                     id={`order-btn-${prod.id}`}
                     onClick={() => onOrderProduct(prod.id)}
-                    className="w-full inline-flex items-center justify-center p-4 bg-linear-to-r from-brand-teal to-brand-aqua hover:brightness-110 font-bold text-sm tracking-widest text-white uppercase rounded-2xl shadow-xl transition-all duration-300 hover:scale-[1.02] active:scale-95 cursor-pointer border-0"
+                    className="w-full inline-flex items-center justify-center p-4 bg-linear-to-r from-brand-teal to-brand-aqua hover:brightness-110 font-bold text-sm tracking-widest text-white uppercase rounded-2xl shadow-btn-glow hover:shadow-btn-glow border-t border-white/35 transition-all duration-300 press-scale cursor-pointer"
                   >
                     <ShoppingCart className="w-5.5 h-5.5 mr-2" />
                     Order {prod.sizeBadge} Chilled
