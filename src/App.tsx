@@ -81,9 +81,6 @@ export default function App() {
           </div>
         </div>
 
-        {/* USP / Why Aabshar Section */}
-        <WhyUs />
-
         {/* Product Catalogue side-by-side cards */}
         <Products onOrderProduct={handleOrderProduct} />
 
@@ -91,6 +88,9 @@ export default function App() {
         <B2B onQuoteClick={() => {
           // Simply accept completed inquiry
         }} />
+
+        {/* USP / Why Aabshar Section (About Us) */}
+        <WhyUs />
 
         {/* Map tracker Area Delivery options */}
         <Delivery />
