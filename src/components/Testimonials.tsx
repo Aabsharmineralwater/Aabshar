@@ -28,7 +28,9 @@ export default function Testimonials() {
   ];
 
   return (
-    <section id="testimonials" className="py-24 bg-gradient-to-b from-white via-sky-50/20 to-white relative overflow-hidden spotlight-glow border-t border-slate-100">
+    <section id="testimonials" className="py-24 bg-transparent relative overflow-hidden spotlight-glow border-t border-white/5 text-slate-100">
+      {/* Continuing Background Scenery Overlay (Slightly darker for text readability) */}
+      <div className="absolute inset-0 bg-[rgba(5,15,35,0.72)] z-0 pointer-events-none" />
       {/* Top Wave Segment */}
       <div className="absolute top-0 inset-x-0 h-10 overflow-hidden pointer-events-none z-1 select-none opacity-40">
         <svg viewBox="0 0 1440 74" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto min-w-[1000px]">
@@ -65,17 +67,17 @@ export default function Testimonials() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-brand-teal font-sans text-xs sm:text-sm font-bold tracking-widest uppercase mb-3 inline-flex items-center gap-1.5"
+            className="text-white bg-brand-teal/35 border border-brand-teal/30 font-sans text-xs sm:text-sm font-bold tracking-widest uppercase mb-4 inline-flex items-center gap-1.5 rounded-full px-3.5 py-1"
           >
-            <Sparkles className="w-4 h-4 text-brand-teal animate-pulse" />
-            Social Proof & Trust
+            <Sparkles className="w-4 h-4 text-sky-200 animate-pulse" />
+            <span className="text-sky-100">Social Proof & Trust</span>
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight"
+            className="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight text-shadow-heading drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]"
           >
             Verified Aabshar Hydration Reviews
           </motion.h2>
@@ -85,7 +87,7 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-sans text-slate-600 text-base sm:text-lg mt-4"
+            className="font-sans text-sky-100/90 text-base sm:text-lg mt-4"
           >
             Don’t just take our word for it. Read honest, real accounts from family pediatricians, corporate event planners, and business heads in Rawalpindi, Islamabad, and Fateh Jang.
           </motion.p>
@@ -101,7 +103,7 @@ export default function Testimonials() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
               whileHover={{ y: -5 }}
-              className="bg-white/80 backdrop-blur-md rounded-3xl border border-white/45 p-8 shadow-3d hover-lift tilt-card inner-highlight flex flex-col justify-between relative group"
+              className="frosted-glass-card rounded-3xl p-8 shadow-3d hover-lift tilt-card inner-highlight flex flex-col justify-between relative group text-slate-800 animate-fade-in"
             >
               {/* Decorative Quotation Symbol */}
               <div className="absolute top-6 right-8 text-sky-200/50 group-hover:text-brand-teal/10 transition-colors duration-350">
@@ -144,7 +146,7 @@ export default function Testimonials() {
 
         {/* Corporate Trust Summary */}
         <div className="mt-16 text-center">
-          <p className="font-sans text-slate-500 text-sm">
+          <p className="font-sans text-sky-100/70 text-sm">
             🛡️ Daily checked in-house and third-party certified testing. Sourced in accordance with PCRWR requirements.
           </p>
         </div>

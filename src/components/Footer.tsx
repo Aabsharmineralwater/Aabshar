@@ -11,10 +11,13 @@ export default function Footer({ onLinkClick }: FooterProps) {
   };
 
   return (
-    <footer className="bg-slate-950 border-t border-slate-950 pt-16 pb-10 relative overflow-hidden font-sans text-slate-400 noise-overlay dark-mesh-bg">
+    <footer className="pt-16 pb-10 relative overflow-hidden font-sans text-slate-400 border-t border-white/5 bg-transparent">
+      {/* Continuing Background Scenery Overlay (Deepest for highest text contrast) */}
+      <div className="absolute inset-0 bg-[rgba(0,5,20,0.88)] z-0 pointer-events-none" />
+
       {/* Background design elements */}
-      <div className="absolute top-0 right-0 w-80 h-80 bg-brand-teal/5 rounded-full filter blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-60 h-60 bg-brand-aqua/4 rounded-full filter blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-80 h-80 bg-brand-teal/5 rounded-full filter blur-3xl pointer-events-none z-1" />
+      <div className="absolute bottom-0 left-0 w-60 h-60 bg-brand-aqua/4 rounded-full filter blur-3xl pointer-events-none z-1" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-12 items-start">

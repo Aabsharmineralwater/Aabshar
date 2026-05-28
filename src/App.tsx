@@ -34,12 +34,15 @@ export default function App() {
   };
 
   return (
-    <div className="bg-brand-deep min-h-screen text-slate-800 font-sans selection:bg-brand-teal selection:text-white relative">
+    <div className="min-h-screen text-slate-100 font-sans selection:bg-brand-teal selection:text-white relative">
+      
+      {/* Decoupled Real Mountain / Abshar scenery background */}
+      <div className="site-bg-backdrop" role="presentation" />
       
       {/* Absolute background canvas overlays */}
-      <div className="fixed top-0 inset-x-0 bottom-0 pointer-events-none z-0 overflow-hidden">
+      <div className="fixed top-0 inset-x-0 bottom-0 pointer-events-none z-[1] overflow-hidden">
         <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-brand-teal/5 rounded-full blur-[160px] animate-pulse" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[60%] h-[60%] bg-brand-aqua/5 rounded-full blur-[180px] animate-pulse" style={{ animationDuration: '8000ms' }} />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[60%] h-[60%] bg-brand-aqua/8 rounded-full blur-[180px] animate-pulse" style={{ animationDuration: '8000ms' }} />
       </div>
 
       <div className="relative z-10 flex flex-col min-h-screen pb-16 md:pb-0">

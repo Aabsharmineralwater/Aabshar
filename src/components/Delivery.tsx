@@ -16,7 +16,9 @@ export default function Delivery() {
   ];
 
   return (
-    <section id="delivery" className="py-24 bg-gradient-to-b from-white via-sky-50/20 to-white relative overflow-hidden spotlight-glow border-t border-slate-100/30">
+    <section id="delivery" className="py-24 bg-transparent relative overflow-hidden spotlight-glow border-t border-white/5 text-slate-100">
+      {/* Continuing Background Scenery Overlay (Slightly darker for text readability) */}
+      <div className="absolute inset-0 bg-[rgba(5,15,35,0.72)] z-0 pointer-events-none" />
       {/* Top Wave Divider for Organic Flow */}
       <div className="absolute top-0 inset-x-0 h-10 overflow-hidden pointer-events-none z-1 select-none opacity-40">
         <svg viewBox="0 0 1440 74" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto min-w-[1000px]">
@@ -57,17 +59,17 @@ export default function Delivery() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-teal/10 border border-brand-teal/20 text-brand-teal text-xs font-semibold uppercase tracking-wider mb-4"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-teal/35 border border-brand-teal/30 text-white text-xs font-semibold uppercase tracking-wider mb-4"
           >
-            <Compass className="w-3.5 h-3.5 text-brand-teal animate-spin-slow" />
-            Direct Coverage Map
+            <Compass className="w-3.5 h-3.5 text-sky-200 animate-spin-slow" />
+            <span className="text-sky-100">Direct Coverage Map</span>
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight"
+            className="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight text-shadow-heading drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]"
           >
             Delivering Fresh To Your Doorstep
           </motion.h2>
@@ -77,7 +79,7 @@ export default function Delivery() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-sans text-slate-600 text-base sm:text-lg mt-4"
+            className="font-sans text-sky-100/90 text-base sm:text-lg mt-4"
           >
             Our specialized fleet of chilled delivery vehicles operates daily to bring Aabshar mineral water straight to your residence, luxury café, wedding marquee, or office.
           </motion.p>
@@ -93,7 +95,7 @@ export default function Delivery() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-white/80 backdrop-blur-md border border-white/45 rounded-3xl p-8 sm:p-10 flex-grow shadow-3d hover-lift tilt-card inner-highlight"
+              className="frosted-glass-card rounded-3xl p-8 sm:p-10 flex-grow shadow-3d hover-lift tilt-card inner-highlight text-slate-800"
             >
               <div className="flex items-center justify-between pb-6 border-b border-slate-100 mb-8">
                 <div className="flex items-center gap-3">
@@ -151,7 +153,7 @@ export default function Delivery() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-white/80 backdrop-blur-md border border-white/45 rounded-3xl p-8 sm:p-10 flex-grow flex flex-col justify-between shadow-3d hover-lift tilt-card inner-highlight"
+              className="frosted-glass-card rounded-3xl p-8 sm:p-10 flex-grow flex flex-col justify-between shadow-3d hover-lift tilt-card inner-highlight text-slate-800"
             >
               <div>
                 <div className="flex items-center justify-between pb-6 border-b border-slate-100 mb-8">

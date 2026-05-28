@@ -101,7 +101,9 @@ export default function OrderForm({ selectedSize, onSizeChange }: OrderFormProps
   };
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-b from-white via-sky-50/20 to-white relative overflow-hidden spotlight-glow border-t border-slate-100/30">
+    <section id="contact" className="py-24 bg-transparent relative overflow-hidden spotlight-glow border-t border-white/5 text-slate-100">
+      {/* Continuing Background Scenery Overlay (Slightly darker for text readability) */}
+      <div className="absolute inset-0 bg-[rgba(5,15,35,0.72)] z-0 pointer-events-none" />
       {/* Top Wave Divider Representing Safe Purified Flow */}
       <div className="absolute top-0 inset-x-0 h-10 overflow-hidden pointer-events-none z-1 select-none opacity-40">
         <svg viewBox="0 0 1440 74" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto min-w-[1000px]">
@@ -124,47 +126,47 @@ export default function OrderForm({ selectedSize, onSizeChange }: OrderFormProps
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-5xl mx-auto items-center">
           
           {/* Left Column: Premium Selling/Trust items */}
-          <div className="lg:col-span-12 xl:col-span-5 text-left flex flex-col justify-center">
-            <span className="font-sans text-xs text-brand-teal font-bold tracking-widest uppercase bg-brand-teal/10 border border-brand-teal/20 px-3 py-1.5 rounded-full mb-4 max-w-max inline-block">
+          <div className="lg:col-span-12 xl:col-span-5 text-left flex flex-col justify-center relative z-10">
+            <span className="font-sans text-xs text-white font-bold tracking-widest uppercase bg-brand-teal/30 border border-brand-teal/40 px-3.5 py-1.5 rounded-full mb-4 max-w-max inline-block">
               Express Shipment Scheduling
             </span>
-            <h2 className="font-serif text-3xl sm:text-4.5xl font-extrabold text-slate-900 tracking-tight mb-4">
+            <h2 className="font-serif text-3xl sm:text-4.5xl font-extrabold text-white text-shadow-heading drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)] tracking-tight mb-4">
               Place Your Mineral Order Today
             </h2>
-            <div className="w-16 h-1 bg-brand-teal rounded-full mb-6" />
-            <p className="font-sans text-slate-600 text-sm sm:text-base leading-relaxed mb-8">
+            <div className="w-16 h-1 bg-linear-to-r from-brand-teal to-brand-aqua rounded-full mb-6" />
+            <p className="font-sans text-sky-100/90 text-sm sm:text-base leading-relaxed mb-8">
               Fill out the schedule request form. No immediate credit card details are needed. Our regional operations team in Islamabad or Rawalpindi will dispatch a confirmation message on WhatsApp or place a direct verified phone call within 10 minutes to schedule delivery slots.
             </p>
 
             {/* Micro trust lists */}
             <div className="space-y-4">
               <div className="flex items-start gap-3.5">
-                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-brand-teal/10 flex items-center justify-center text-brand-teal mt-0.5 border border-brand-teal/20">
+                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-brand-teal/20 flex items-center justify-center text-sky-300 mt-0.5 border border-brand-teal/30">
                   <span className="text-xs font-bold">1</span>
                 </div>
                 <div>
-                  <h4 className="font-serif text-sm sm:text-base font-bold text-slate-900">No Upfront Payment</h4>
-                  <p className="font-sans text-xs sm:text-sm text-slate-500">Pay on cash delivery or direct bank transfers upon landing.</p>
+                  <h4 className="font-serif text-sm sm:text-base font-bold text-white">No Upfront Payment</h4>
+                  <p className="font-sans text-xs sm:text-sm text-sky-100/70">Pay on cash delivery or direct bank transfers upon landing.</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3.5">
-                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-brand-teal/10 flex items-center justify-center text-brand-teal mt-0.5 border border-brand-teal/20">
+                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-brand-teal/20 flex items-center justify-center text-sky-300 mt-0.5 border border-brand-teal/30">
                   <span className="text-xs font-bold">2</span>
                 </div>
                 <div>
-                  <h4 className="font-serif text-sm sm:text-base font-bold text-slate-900">Pre-Chilled Delivery</h4>
-                  <p className="font-sans text-xs sm:text-sm text-slate-500">All bottles ship in clean temperature-regulated distribution vehicles.</p>
+                  <h4 className="font-serif text-sm sm:text-base font-bold text-white">Pre-Chilled Delivery</h4>
+                  <p className="font-sans text-xs sm:text-sm text-sky-100/70">All bottles ship in clean temperature-regulated distribution vehicles.</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3.5">
-                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-brand-teal/10 flex items-center justify-center text-brand-teal mt-0.5 border border-brand-teal/20">
+                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-brand-teal/20 flex items-center justify-center text-sky-300 mt-0.5 border border-brand-teal/30">
                   <span className="text-xs font-bold">3</span>
                 </div>
                 <div>
-                  <h4 className="font-serif text-sm sm:text-base font-bold text-slate-900">Minimum Order of 5</h4>
-                  <p className="font-sans text-xs sm:text-sm text-slate-500">We establish custom route optimizations starting as low as five units.</p>
+                  <h4 className="font-serif text-sm sm:text-base font-bold text-white">Minimum Order of 5</h4>
+                  <p className="font-sans text-xs sm:text-sm text-sky-100/70">We establish custom route optimizations starting as low as five units.</p>
                 </div>
               </div>
             </div>
@@ -175,7 +177,7 @@ export default function OrderForm({ selectedSize, onSizeChange }: OrderFormProps
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="mt-8 p-4 bg-slate-50 border border-slate-100 rounded-2xl flex items-center gap-4 relative overflow-hidden"
+              className="mt-8 p-4 bg-slate-900/40 border border-white/10 rounded-2xl flex items-center gap-4 relative overflow-hidden z-[5] text-white"
             >
               <div className="absolute right-[-10%] bottom-[-20%] w-32 h-32 bg-brand-teal/5 rounded-full blur-2xl pointer-events-none" />
               <img
@@ -185,9 +187,9 @@ export default function OrderForm({ selectedSize, onSizeChange }: OrderFormProps
                 referrerPolicy="no-referrer"
               />
               <div className="text-left">
-                <span className="font-sans text-[10px] text-brand-teal font-bold uppercase tracking-wider bg-brand-teal/10 px-2 py-0.5 rounded">Selected Model</span>
-                <h4 className="font-serif text-base font-bold text-slate-900 mt-1">Aabshar Hydration Companion</h4>
-                <p className="font-sans text-xs text-slate-500 mt-1 leading-relaxed">
+                <span className="font-sans text-[10px] text-white font-bold uppercase tracking-wider bg-brand-teal/30 px-2 py-0.5 rounded border border-brand-teal/20">Selected Model</span>
+                <h4 className="font-serif text-base font-bold text-white mt-1">Aabshar Hydration Companion</h4>
+                <p className="font-sans text-xs text-sky-200/80 mt-1 leading-relaxed">
                   Your physical order matches our standard food-grade vertical logo design with pre-purified mineral parameters.
                 </p>
               </div>
@@ -195,8 +197,8 @@ export default function OrderForm({ selectedSize, onSizeChange }: OrderFormProps
           </div>
 
           {/* Right Column: Dynamic Form Container with animations */}
-          <div className="lg:col-span-12 xl:col-span-7">
-            <div className="bg-white/80 backdrop-blur-md border border-white/45 rounded-3xl p-8 sm:p-10 shadow-3d inner-highlight relative overflow-hidden min-h-[500px] flex flex-col justify-center">
+          <div className="lg:col-span-12 xl:col-span-7 relative z-10 text-slate-800">
+            <div className="frosted-glass-card rounded-3xl p-8 sm:p-10 shadow-3d inner-highlight relative overflow-hidden min-h-[500px] flex flex-col justify-center">
               
               <AnimatePresence mode="wait">
                 {!isSubmitted ? (

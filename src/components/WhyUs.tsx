@@ -31,7 +31,9 @@ export default function WhyUs() {
   ];
 
   return (
-    <section id="about" className="py-24 bg-gradient-to-b from-white via-sky-50/40 to-white relative overflow-hidden">
+    <section id="about" className="py-24 bg-transparent relative overflow-hidden text-slate-100 border-t border-white/5">
+      {/* Continuing Background Scenery Overlay (Slightly darker for text readability) */}
+      <div className="absolute inset-0 bg-[rgba(5,15,35,0.72)] z-0 pointer-events-none" />
       {/* Top Wave Divider Representing Pristine Flow */}
       <div className="absolute top-0 inset-x-0 h-10 overflow-hidden pointer-events-none z-1 select-none opacity-40">
         <svg viewBox="0 0 1440 74" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto min-w-[1000px]">
@@ -70,17 +72,17 @@ export default function WhyUs() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-brand-teal font-sans text-xs sm:text-sm font-bold tracking-widest uppercase mb-3 inline-flex items-center gap-1.5"
+            className="text-white bg-brand-teal/30 border border-brand-teal/20 px-3.5 py-1 rounded-full font-sans text-xs sm:text-sm font-bold tracking-widest uppercase mb-4 inline-flex items-center gap-1.5"
           >
-            <GlassWater className="w-4 h-4 animate-bounce" />
-            The Pure Standard
+            <GlassWater className="w-4 h-4 animate-bounce text-sky-200" />
+            <span className="text-sky-100">The Pure Standard</span>
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight"
+            className="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight text-shadow-heading drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]"
           >
             What Makes Aabshar Premium & Pure?
           </motion.h2>
@@ -90,7 +92,7 @@ export default function WhyUs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-sans text-slate-600 text-base sm:text-lg mt-4"
+            className="font-sans text-sky-100/90 text-base sm:text-lg mt-4"
           >
             Aabshar is more than just drinking water — it is scientifically balanced mineral hydration designed for active lifestyles, perfectly crafted to elevate your daily well-being.
           </motion.p>
@@ -106,7 +108,7 @@ export default function WhyUs() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -8, transition: { duration: 0.2 } }}
-              className="bg-white/75 backdrop-blur-md border border-white/45 rounded-3xl p-8 hover:border-brand-teal/40 transition-all duration-300 shadow-3d hover-lift tilt-card inner-highlight relative group overflow-hidden"
+              className="frosted-glass-card rounded-3xl p-8 hover:border-brand-teal/40 transition-all duration-300 shadow-3d hover-lift tilt-card inner-highlight relative group overflow-hidden text-slate-800"
             >
               {/* Subtle accent hover indicator in card top corner */}
               <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-brand-teal to-brand-aqua scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
@@ -136,7 +138,7 @@ export default function WhyUs() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mt-20 p-8 sm:p-12 rounded-3xl bg-white/75 backdrop-blur-md border border-white/45 shadow-3d hover-lift tilt-card inner-highlight relative overflow-hidden"
+          className="mt-20 p-8 sm:p-12 rounded-3xl frosted-glass-card shadow-3d hover-lift tilt-card inner-highlight relative overflow-hidden text-slate-850"
         >
           <div className="absolute top-0 right-0 w-64 h-64 bg-brand-teal/5 rounded-full blur-3xl pointer-events-none" />
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">

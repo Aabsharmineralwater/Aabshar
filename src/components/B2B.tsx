@@ -47,7 +47,7 @@ const RealBottleMockupCard = ({
   tagline: string;
 }) => {
   return (
-    <div className="flex flex-col items-center bg-white/75 backdrop-blur-md border border-white/45 rounded-3xl p-5 sm:p-6 shadow-3d hover-lift tilt-card inner-highlight transition-all duration-500 group w-full max-w-sm relative overflow-hidden">
+    <div className="flex flex-col items-center frosted-glass-card rounded-3xl p-5 sm:p-6 shadow-3d hover-lift tilt-card inner-highlight transition-all duration-500 group w-full max-w-sm relative overflow-hidden">
       {/* Background glow visual accent */}
       <div className="absolute top-0 right-0 w-24 h-24 bg-brand-teal/5 rounded-full filter blur-xl pointer-events-none group-hover:bg-brand-teal/10 transition-colors" />
       
@@ -309,15 +309,17 @@ export default function B2B({ onQuoteClick }: B2BProps) {
   };
 
   return (
-    <section id="b2b" className="py-24 bg-gradient-to-b from-slate-50/40 via-sky-50/20 to-white text-slate-800 relative overflow-hidden spotlight-glow border-t border-slate-150">
+    <section id="b2b" className="py-24 bg-transparent text-slate-100 relative overflow-hidden spotlight-glow border-t border-white/5">
+      {/* Continuing Background Scenery Overlay (Slightly darker for text readability) */}
+      <div className="absolute inset-0 bg-[rgba(5,15,35,0.72)] z-0 pointer-events-none" />
       
       {/* Soft and subtle light organic ambient gradients */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-brand-teal/5 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute -top-40 right-10 w-96 h-96 bg-brand-aqua/5 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-20 left-10 w-80 h-80 bg-slate-200/45 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-brand-teal/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute -top-40 right-10 w-96 h-96 bg-brand-aqua/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-20 left-10 w-80 h-80 bg-brand-teal/5 rounded-full blur-[100px] pointer-events-none" />
 
       {/* Grid Pattern with subtle opacity suited for a clean minimal backdrop */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#0284c703_1px,transparent_1px),linear-gradient(to_bottom,#0284c703_1px,transparent_1px)] bg-[size:3rem_3rem] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:3rem_3rem] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -327,10 +329,10 @@ export default function B2B({ onQuoteClick }: B2BProps) {
             initial={{ opacity: 0, y: -10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-teal/10 border border-brand-teal/30 text-brand-teal text-[11px] sm:text-xs font-bold uppercase tracking-widest mb-6"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-teal/35 border border-brand-teal/40 text-white text-[11px] sm:text-xs font-bold uppercase tracking-widest mb-6"
           >
-            <Sparkles className="w-3.5 h-3.5" />
-            Custom Private Labeling
+            <Sparkles className="w-3.5 h-3.5 text-sky-200 animate-pulse" />
+            <span className="text-sky-100">Custom Private Labeling</span>
           </motion.div>
           
           <motion.h2
@@ -338,10 +340,10 @@ export default function B2B({ onQuoteClick }: B2BProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="font-serif text-3.5xl sm:text-4.5xl md:text-5.5xl font-extrabold tracking-tight leading-tight text-slate-900"
+            className="font-serif text-3.5xl sm:text-4.5xl md:text-5.5xl font-extrabold tracking-tight leading-tight text-white text-shadow-heading drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]"
           >
             Elevate Your Brand With <br className="hidden sm:inline" />
-            <span className="text-brand-teal">Custom Label Water</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal to-brand-aqua">Custom Label Water</span>
           </motion.h2>
 
           <motion.p
@@ -349,7 +351,7 @@ export default function B2B({ onQuoteClick }: B2BProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-sans text-brand-teal/80 text-base sm:text-lg md:text-xl font-bold mt-4 tracking-wide"
+            className="font-sans text-sky-300 text-base sm:text-lg md:text-xl font-bold mt-4 tracking-wide"
           >
             Your Logo. Your Company. Your Message. Our Premium Mineral Water.
           </motion.p>
@@ -359,7 +361,7 @@ export default function B2B({ onQuoteClick }: B2BProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-sans text-slate-600 text-sm sm:text-base leading-relaxed mt-5 max-w-2xl mx-auto"
+            className="font-sans text-sky-100/90 text-sm sm:text-base leading-relaxed mt-5 max-w-2xl mx-auto"
           >
             Partner with Aabshar and put your brand on every sip. We provide premium verified mineral water in custom-labeled bottles — professionally designed and delivered. Perfect for businesses that value quality and brand presence.
           </motion.p>
@@ -383,7 +385,7 @@ export default function B2B({ onQuoteClick }: B2BProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="bg-white border border-slate-100 rounded-2xl p-6.5 hover:border-brand-teal/40 hover:shadow-lg hover:shadow-brand-teal/5 transition-all duration-300 flex flex-col items-center text-center group shadow-sm"
+                className="frosted-glass-card rounded-2xl p-6.5 hover:border-brand-teal/40 hover:shadow-lg hover:shadow-brand-teal/5 transition-all duration-300 flex flex-col items-center text-center group shadow-sm text-slate-800"
               >
                 <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
                   {target.icon}
@@ -402,10 +404,10 @@ export default function B2B({ onQuoteClick }: B2BProps) {
         {/* 4 Step Process Horizontal Flow */}
         <div className="mb-28 max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h3 className="font-serif text-2xl sm:text-3.5xl font-bold text-slate-900">
+            <h3 className="font-serif text-2xl sm:text-3.5xl font-bold text-white text-shadow-heading drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]">
               Seamless 4-Step Process
             </h3>
-            <p className="font-sans text-xs sm:text-sm text-slate-500 mt-2">
+            <p className="font-sans text-xs sm:text-sm text-sky-100/90 mt-2">
               From creative concept blueprints to fresh direct distribution boxes in zero delays
             </p>
           </div>
@@ -428,7 +430,7 @@ export default function B2B({ onQuoteClick }: B2BProps) {
                     {st.step.replace("Step ", "0")}
                   </div>
                   
-                  <div className="bg-white/80 border border-slate-100 backdrop-blur-sm p-6 rounded-2xl flex-grow flex flex-col h-full shadow-sm hover:shadow-md transition-shadow">
+                  <div className="frosted-glass-card p-6 rounded-2xl flex-grow flex flex-col h-full shadow-sm hover:shadow-md transition-shadow text-slate-800">
                     <div className="mb-3 mx-auto p-2 bg-brand-teal/10 rounded-full">{st.icon}</div>
                     <h4 className="font-serif text-base font-extrabold text-slate-900 mb-2">
                       {st.title}
@@ -446,10 +448,10 @@ export default function B2B({ onQuoteClick }: B2BProps) {
         {/* 🚨 Water Bottle Mockups Side-By-Side */}
         <div className="mb-28 max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h3 className="font-serif text-2xl sm:text-4.5xl font-bold text-slate-900">
+            <h3 className="font-serif text-2xl sm:text-4.5xl font-bold text-white text-shadow-heading drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]">
               Custom Water Bottle Mockups
             </h3>
-            <p className="font-sans text-xs sm:text-sm text-slate-500 mt-2 max-w-xl mx-auto">
+            <p className="font-sans text-xs sm:text-sm text-sky-100/90 mt-2 max-w-xl mx-auto">
               Browse through photorealistic private label concepts designed for leading establishments. Each setup features a matched pair of 500 mL and 1.5 L mineral water bottles with high-definition graphic wraps.
             </p>
           </div>
@@ -544,7 +546,7 @@ export default function B2B({ onQuoteClick }: B2BProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white/80 backdrop-blur-md border border-white/45 rounded-3xl p-8 sm:p-12 shadow-3d inner-highlight relative overflow-hidden"
+            className="frosted-glass-card rounded-3xl p-8 sm:p-12 shadow-3d inner-highlight relative overflow-hidden"
           >
             {/* Top accent visual border line */}
             <div className="absolute top-0 inset-x-0 h-[4px] bg-gradient-to-r from-brand-teal to-brand-aqua" />
@@ -553,7 +555,7 @@ export default function B2B({ onQuoteClick }: B2BProps) {
               <h3 className="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900">
                 Request Your Brand Mockup
               </h3>
-              <p className="font-sans text-xs sm:text-sm text-slate-500 mt-2">
+              <p className="font-sans text-xs sm:text-sm text-slate-600 mt-2">
                 Provide basic business details. Our premium graphic lab will assemble and present a complimentary digital mockup of your product logo labeled bottle.
               </p>
             </div>
