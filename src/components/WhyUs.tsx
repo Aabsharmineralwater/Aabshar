@@ -1,6 +1,5 @@
 import { GlassWater, Droplet, Mountain, ShieldCheck, Truck } from 'lucide-react';
 import { motion } from 'motion/react';
-import bottleImage from '../assets/images/aabshar_500ml_bottle_1779790971869.png';
 
 export default function WhyUs() {
   const features = [
@@ -54,14 +53,53 @@ export default function WhyUs() {
         <div className="absolute right-[30%] bottom-8 w-5 h-5 bg-brand-teal/10 rounded-full blur-xs animate-bubble-fast [animation-delay:4.5s]" />
       </div>
 
-      {/* Subtly presented backdrop watermark Aabshar bottle */}
-      <div className="absolute right-[-5%] top-[10%] opacity-15 sm:opacity-20 pointer-events-none select-none z-0">
-        <img
-          src={bottleImage}
-          alt="Water Droplet Backdrop Sensation"
-          className="h-[600px] w-auto animate-float object-contain filter blur-xs drop-shadow-[0_0_50px_rgba(2,132,199,0.1)] rotate-12"
-          referrerPolicy="no-referrer"
-        />
+      {/* Stylized Science/Mineral filtration lattice map as watermark */}
+      <div className="absolute right-[-10%] md:right-[2%] top-[10%] md:top-[12%] opacity-15 pointer-events-none select-none z-0 w-[300px] sm:w-[480px] h-[300px] sm:h-[480px] flex items-center justify-center">
+        <svg
+          viewBox="0 0 400 400"
+          className="w-full h-full text-brand-teal/30 drop-shadow-[0_0_30px_rgba(2,132,199,0.12)]"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          {/* Crystalline water molecule nodes (H2O & minerals) */}
+          <g stroke="currentColor" strokeWidth="1.5">
+            <line x1="200" y1="200" x2="100" y2="150" opacity="0.4" />
+            <line x1="200" y1="200" x2="300" y2="150" opacity="0.4" />
+            <line x1="200" y1="200" x2="200" y2="310" opacity="0.4" />
+            <line x1="100" y1="150" x2="100" y2="70" strokeDasharray="3,3" opacity="0.3" />
+            <line x1="300" y1="150" x2="300" y2="70" strokeDasharray="3,3" opacity="0.3" />
+            <line x1="200" y1="310" x2="120" y2="350" strokeDasharray="3,3" opacity="0.3" />
+            <line x1="200" y1="310" x2="280" y2="350" strokeDasharray="3,3" opacity="0.3" />
+          </g>
+
+          {/* Central O (Oxygen) Core */}
+          <g className="translate-x-[200px] translate-y-[200px]">
+            <circle cx="0" cy="0" r="32" className="fill-brand-teal/10 stroke-brand-teal stroke-2" />
+            <circle cx="0" cy="0" r="12" className="fill-brand-teal" />
+            <text x="0" y="5" textAnchor="middle" className="fill-white font-sans text-xs font-black">H₂O</text>
+          </g>
+
+          {/* Hydrogen & Mineral satellites */}
+          <g className="translate-x-[100px] translate-y-[150px]">
+            <circle cx="0" cy="0" r="22" className="fill-sky-500/10 stroke-sky-400 stroke-1" />
+            <circle cx="0" cy="0" r="8" className="fill-sky-400" />
+            <text x="0" y="-28" textAnchor="middle" className="fill-slate-900 font-sans text-[10px] font-bold">Ca²⁺ (Calcium)</text>
+          </g>
+
+          <g className="translate-x-[300px] translate-y-[150px]">
+            <circle cx="0" cy="0" r="22" className="fill-sky-500/10 stroke-sky-400 stroke-1" />
+            <circle cx="0" cy="0" r="8" className="fill-sky-400" />
+            <text x="0" y="-28" textAnchor="middle" className="fill-slate-900 font-sans text-[10px] font-bold">Mg²⁺ (Magnesium)</text>
+          </g>
+
+          <g className="translate-x-[200px] translate-y-[310px]">
+            <circle cx="0" cy="0" r="22" className="fill-sky-500/10 stroke-sky-400 stroke-1" />
+            <circle cx="0" cy="0" r="8" className="fill-sky-400" />
+            <text x="0" y="36" textAnchor="middle" className="fill-slate-900 font-sans text-[10px] font-bold">K⁺ (Potassium)</text>
+          </g>
+
+          {/* Outer orbiting rings */}
+          <circle cx="200" cy="200" r="160" stroke="currentColor" strokeWidth="1" strokeDasharray="5,15" fill="none" className="animate-[spin_30s_linear_infinite]" />
+        </svg>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -155,18 +193,46 @@ export default function WhyUs() {
               </p>
             </div>
 
-            <div className="lg:col-span-4 flex justify-between sm:justify-around lg:justify-end gap-6 border-t lg:border-t-0 lg:border-l border-sky-200 pt-6 lg:pt-0 lg:pl-8">
-              <div className="text-center lg:text-left">
-                <p className="font-serif text-4xl sm:text-5xl font-extrabold text-brand-teal">
-                  120+
-                </p>
-                <p className="font-sans text-xs text-slate-500 uppercase tracking-widest font-semibold mt-1">Minimum TDS</p>
+            <div className="lg:col-span-4 flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-slate-150 pt-6 lg:pt-0 lg:pl-8 text-left">
+              <div className="mb-4">
+                <span className="text-[9px] uppercase font-mono tracking-widest text-brand-teal font-extrabold block mb-1">Aabshar Metric Laboratory</span>
+                <h4 className="font-serif text-lg font-extrabold text-slate-900">Total Dissolved Solids (TDS)</h4>
               </div>
-              <div className="text-center lg:text-left">
-                <p className="font-serif text-4xl sm:text-5xl font-extrabold text-brand-teal">
-                  160
+
+              {/* Styled Visual SVG Gauge bar */}
+              <div className="w-full h-8 relative rounded-full overflow-hidden bg-slate-100/80 border border-slate-200/50 flex mb-4 shadow-inner">
+                {/* 0-100 Low mineral segment */}
+                <div className="w-[35%] h-full bg-gradient-to-r from-slate-200 to-sky-100 flex items-center justify-center">
+                  <span className="text-[8px] font-sans font-extrabold text-slate-500 uppercase tracking-widest">Low</span>
+                </div>
+                {/* 120-160 Sweet Spot (Glowing Brand-Teal/Emerald) */}
+                <div className="w-[30%] h-full bg-gradient-to-r from-brand-teal to-emerald-500 flex items-center justify-center relative shadow-[inset_0_0_12px_rgba(2,132,199,0.25)]">
+                  <div className="absolute inset-0 bg-white/20 animate-pulse pointer-events-none" />
+                  <span className="text-[8px] font-sans font-black text-white uppercase tracking-wider text-center drop-shadow-[0_1px_4px_rgba(0,0,0,0.3)]">SWEET SPOT</span>
+                </div>
+                {/* 170-300 High mineral segment */}
+                <div className="w-[35%] h-full bg-gradient-to-r from-slate-100 to-slate-200 flex items-center justify-center">
+                  <span className="text-[8px] font-sans font-extrabold text-slate-500 uppercase tracking-widest">High</span>
+                </div>
+
+                {/* Sliding indicator node in the middle of sweet spot */}
+                <div className="absolute left-[50%] top-[-3px] w-2.5 h-[38px] bg-slate-900 rounded-full shadow-lg border-2 border-white animate-bounce pointer-events-none" />
+              </div>
+
+              {/* Legend & range details */}
+              <div className="grid grid-cols-3 text-center text-[10px] font-sans font-bold text-slate-500 uppercase tracking-wider mb-4">
+                <div>&lt; 50 TDS</div>
+                <div className="text-brand-teal font-extrabold">120 - 160</div>
+                <div>&gt; 300 TDS</div>
+              </div>
+
+              <div className="p-3.5 bg-emerald-50/60 border border-emerald-100 rounded-2xl flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-600 flex-shrink-0 font-bold font-sans text-xs">
+                  ✓
+                </div>
+                <p className="font-sans text-[11px] text-slate-600 leading-tight">
+                  <strong>Aabshar Target Range:</strong> Our minerals are balanced to sit exactly at <strong>135 TDS</strong> for optimal cell bio-hydration.
                 </p>
-                <p className="font-sans text-xs text-slate-500 uppercase tracking-widest font-semibold mt-1">Maximum TDS</p>
               </div>
             </div>
 

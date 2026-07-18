@@ -1,6 +1,5 @@
 import { Quote, Star, Sparkles } from 'lucide-react';
 import { motion } from 'motion/react';
-import bottleImage from '../assets/images/aabshar_500ml_bottle_1779790971869.png';
 
 export default function Testimonials() {
   const reviews = [
@@ -49,14 +48,33 @@ export default function Testimonials() {
         <div className="absolute right-[25%] bottom-16 w-4 h-4 bg-brand-teal/10 rounded-full blur-xs animate-bubble-fast [animation-delay:1.5s]" />
       </div>
 
-      {/* Subtle Aabshar bottle watermark floating behind review cards */}
-      <div className="absolute right-[-8%] top-[15%] opacity-15 sm:opacity-20 pointer-events-none select-none z-0">
-        <img
-          src={bottleImage}
-          alt="Testimonials Purity Aura"
-          className="h-[520px] w-auto animate-float object-contain filter blur-xs rotate-45"
-          referrerPolicy="no-referrer"
-        />
+      {/* Stylized Quote/Aura graphics as watermark */}
+      <div className="absolute right-[-10%] md:right-[5%] top-[10%] md:top-[15%] opacity-20 pointer-events-none select-none z-0 w-[320px] sm:w-[480px] h-[320px] sm:h-[480px]">
+        <svg
+          viewBox="0 0 400 400"
+          className="w-full h-full text-brand-teal/30 drop-shadow-[0_0_25px_rgba(2,132,199,0.1)]"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          {/* Animated rings */}
+          <circle cx="200" cy="200" r="160" stroke="currentColor" strokeWidth="1.5" strokeDasharray="10,12" fill="none" className="animate-[spin_40s_linear_infinite]" />
+          <circle cx="200" cy="200" r="120" stroke="currentColor" strokeWidth="1" strokeDasharray="4,6" fill="none" className="animate-[spin_25s_linear_infinite_reverse]" />
+          <circle cx="200" cy="200" r="80" stroke="currentColor" strokeWidth="1" opacity="0.4" fill="none" />
+          
+          {/* Floating quotes glyphs inside */}
+          <g className="fill-brand-teal/20 text-brand-teal/15">
+            <path d="M 120,160 Q 140,160 140,180 Q 140,200 120,200 Q 100,200 100,180 L 100,160 Z" />
+            <path d="M 150,160 Q 170,160 170,180 Q 170,200 150,200 Q 130,200 130,180 L 130,160 Z" />
+          </g>
+
+          {/* Floating star sparks */}
+          <g className="fill-brand-teal/40">
+            <path d="M 280,120 L 283,127 L 290,127 L 284,131 L 286,138 L 280,133 L 274,138 L 276,131 L 270,127 L 277,127 Z" className="animate-pulse" />
+            <path d="M 100,280 L 102,284 L 108,284 L 104,287 L 105,292 L 100,289 L 95,292 L 96,287 L 92,284 L 98,284 Z" className="animate-pulse [animation-delay:1s]" />
+          </g>
+
+          {/* Large decorative quotation */}
+          <text x="200" y="240" textAnchor="middle" className="font-serif text-[180px] font-bold fill-brand-teal/[0.08]" style={{ userSelect: 'none' }}>“</text>
+        </svg>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -128,15 +146,18 @@ export default function Testimonials() {
               </div>
 
               {/* Reviewer Details */}
-              <div className="pt-6 border-t border-slate-100 flex items-center justify-between">
-                <div>
-                  <h4 className="font-serif text-base sm:text-lg font-bold text-slate-900 group-hover:text-brand-teal transition-colors">
+              <div className="pt-6 border-t border-slate-100 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-brand-teal to-brand-aqua flex items-center justify-center text-white font-display text-xs font-black border border-white shadow-xs flex-shrink-0">
+                  {rev.name.split(' ').map(n => n[0]).join('')}
+                </div>
+                <div className="flex-grow text-left overflow-hidden">
+                  <h4 className="font-serif text-sm sm:text-base font-extrabold text-slate-900 group-hover:text-brand-teal transition-colors truncate">
                     {rev.name}
                   </h4>
-                  <p className="font-sans text-xs text-brand-teal mt-0.5 font-semibold">{rev.role}</p>
+                  <p className="font-sans text-[11px] text-slate-500 mt-0.5 font-bold truncate">{rev.role}</p>
                 </div>
-                <div className="bg-sky-50 px-3 py-1 rounded-full border border-sky-150 text-[10px] text-slate-500 font-semibold uppercase tracking-wider">
-                  📍 {rev.location}
+                <div className="bg-sky-50 px-2.5 py-1.5 rounded-full border border-sky-100 text-[9px] text-brand-teal font-extrabold uppercase tracking-wider flex-shrink-0">
+                  {rev.location.replace("📍 ", "")}
                 </div>
               </div>
 

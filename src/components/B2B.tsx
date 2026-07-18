@@ -14,7 +14,9 @@ import {
   Heart,
   Droplets,
   HelpCircle,
-  FileCheck
+  FileCheck,
+  Factory,
+  Dumbbell
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -218,31 +220,31 @@ export default function B2B({ onQuoteClick }: B2BProps) {
       id: "b2b-hotels",
       title: "Hotels & Resorts",
       desc: "Impress every guest with your branded water on every table and room",
-      icon: "🏨",
+      icon: <Hotel className="w-8 h-8 text-brand-teal group-hover:text-brand-aqua transition-colors" />,
     },
     {
       id: "b2b-restaurants",
       title: "Restaurants & Cafes",
       desc: "Serve premium mineral water that carries your restaurant's identity",
-      icon: "🍽️",
+      icon: <Utensils className="w-8 h-8 text-brand-teal group-hover:text-brand-aqua transition-colors" />,
     },
     {
       id: "b2b-offices",
       title: "Offices & Corporates",
       desc: "Strengthen your brand culture with custom labeled water for meetings and staff",
-      icon: "🏢",
+      icon: <Building2 className="w-8 h-8 text-brand-teal group-hover:text-brand-aqua transition-colors" />,
     },
     {
       id: "b2b-wedding",
       title: "Shaadi Halls & Marquees",
       desc: "Make every wedding memorable with elegantly branded water bottles",
-      icon: "💍",
+      icon: <Heart className="w-8 h-8 text-brand-teal group-hover:text-brand-aqua transition-colors animate-pulse" />,
     },
     {
       id: "b2b-companies",
       title: "Companies & Events",
       desc: "Product launches, conferences, exhibitions — your brand, every bottle",
-      icon: "🏭",
+      icon: <Factory className="w-8 h-8 text-brand-teal group-hover:text-brand-aqua transition-colors" />,
     },
   ];
 
@@ -387,7 +389,7 @@ export default function B2B({ onQuoteClick }: B2BProps) {
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 className="frosted-glass-card rounded-2xl p-6.5 hover:border-brand-teal/40 hover:shadow-lg hover:shadow-brand-teal/5 transition-all duration-300 flex flex-col items-center text-center group shadow-sm text-slate-800"
               >
-                <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="mb-4 bg-brand-teal/10 p-3 rounded-full group-hover:scale-110 transition-transform duration-300">
                   {target.icon}
                 </div>
                 <h4 className="font-serif text-base font-extrabold text-slate-900 mb-2 group-hover:text-brand-teal transition-colors duration-200">
@@ -473,7 +475,7 @@ export default function B2B({ onQuoteClick }: B2BProps) {
                 tagline="Definest athletic standards, hydrating ultimate physical training."
                 badge={
                   <span className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 bg-blue-50 text-blue-800 border border-blue-100 rounded-full shadow-2xs">
-                    🏋️‍♂️ Fitness & Sports
+                    <Dumbbell className="w-3.5 h-3.5 text-blue-600" /> Fitness & Sports
                   </span>
                 }
                 colors={[
@@ -499,7 +501,7 @@ export default function B2B({ onQuoteClick }: B2BProps) {
                 tagline="Crafted flavors matched with exceptionally pure mineral hydration."
                 badge={
                   <span className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 bg-amber-50 text-amber-800 border border-amber-100 rounded-full shadow-2xs">
-                    🍽️ Fine Dining & Cafes
+                    <Utensils className="w-3.5 h-3.5 text-amber-600" /> Fine Dining & Cafes
                   </span>
                 }
                 colors={[
@@ -525,7 +527,7 @@ export default function B2B({ onQuoteClick }: B2BProps) {
                 tagline="Innovate, build, and deliver with top-tier corporate branding on every desk."
                 badge={
                   <span className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 bg-indigo-50 text-indigo-800 border border-indigo-100 rounded-full shadow-2xs">
-                    🏢 Tech Ventures & Events
+                    <Building2 className="w-3.5 h-3.5 text-indigo-600" /> Tech Ventures & Events
                   </span>
                 }
                 colors={[

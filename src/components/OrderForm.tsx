@@ -358,17 +358,17 @@ export default function OrderForm({ selectedSize, onSizeChange }: OrderFormProps
                           <button
                             type="button"
                             onClick={handleDecrement}
-                            className="w-10 h-10 rounded-lg bg-white border border-slate-200 text-slate-800 font-bold text-lg flex items-center justify-center hover:bg-slate-100 transition-all cursor-pointer"
+                            className="w-11 h-11 rounded-xl bg-white border border-slate-200 text-slate-800 font-bold text-lg flex items-center justify-center hover:bg-slate-100 transition-all cursor-pointer shadow-2xs active:scale-95"
                           >
                             -
                           </button>
-                          <span className="font-sans font-extrabold text-xl text-slate-900 w-12 text-center">
+                          <span className="font-sans font-extrabold text-xl text-slate-900 w-12 text-center select-none">
                             {quantity}
                           </span>
                           <button
                             type="button"
                             onClick={handleIncrement}
-                            className="w-10 h-10 rounded-lg bg-white border border-slate-200 text-slate-800 font-bold text-lg flex items-center justify-center hover:bg-slate-100 transition-all cursor-pointer"
+                            className="w-11 h-11 rounded-xl bg-white border border-slate-200 text-slate-800 font-bold text-lg flex items-center justify-center hover:bg-slate-100 transition-all cursor-pointer shadow-2xs active:scale-95"
                           >
                             +
                           </button>

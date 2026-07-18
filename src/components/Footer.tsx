@@ -1,4 +1,4 @@
-import { Facebook, Instagram } from 'lucide-react';
+import { Facebook, Instagram, MapPin, Phone, Mail, Clock } from 'lucide-react';
 import aabsharLogo from '../assets/images/regenerated_image_1779783054758.png';
 
 interface FooterProps {
@@ -140,20 +140,20 @@ export default function Footer({ onLinkClick }: FooterProps) {
               Contact Us
             </h4>
             <ul className="flex flex-col gap-3 text-slate-400 text-xs sm:text-sm text-left">
-              <li className="flex items-start gap-2">
-                <span className="flex-shrink-0 text-amber-500">📍</span>
+              <li className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-brand-teal flex-shrink-0 mt-0.5" />
                 <span><strong>Serving:</strong> Rawalpindi, Islamabad, Fateh Jang</span>
               </li>
-              <li className="flex items-center gap-2">
-                <span className="flex-shrink-0 text-teal-600">📞</span>
+              <li className="flex items-center gap-3">
+                <Phone className="w-5 h-5 text-emerald-500 flex-shrink-0" />
                 <span><strong>Phone:</strong> <a href="tel:+923051999897" className="hover:text-brand-teal font-medium hover:underline">+92-305-1999897</a></span>
               </li>
-              <li className="flex items-center gap-2">
-                <span className="flex-shrink-0 text-sky-600">📧</span>
+              <li className="flex items-center gap-3">
+                <Mail className="w-5 h-5 text-sky-500 flex-shrink-0" />
                 <span><strong>Email:</strong> <a href="mailto:aabshar.org@gmail.com" className="hover:text-brand-teal hover:underline font-medium">aabshar.org@gmail.com</a></span>
               </li>
-              <li className="flex items-center gap-2">
-                <span className="flex-shrink-0 text-emerald-500">🕐</span>
+              <li className="flex items-center gap-3">
+                <Clock className="w-5 h-5 text-indigo-400 flex-shrink-0" />
                 <span><strong>Delivery Hours:</strong> 8am – 8pm Daily</span>
               </li>
             </ul>

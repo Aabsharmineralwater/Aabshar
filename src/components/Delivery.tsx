@@ -1,7 +1,6 @@
 import { MapPin, Globe, Check, PhoneCall, Compass } from 'lucide-react';
 import { motion } from 'motion/react';
-import bottleImage from '../assets/images/aabshar_500ml_bottle_1779790971869.png';
-
+// Direct Coverage Map component
 export default function Delivery() {
   const activeAreas = [
     { name: 'Rawalpindi', sector: 'All residential sectors & commercial hubs', deliveryTime: 'Same Day / Next Day' },
@@ -38,14 +37,80 @@ export default function Delivery() {
         <div className="absolute right-[15%] bottom-10 w-2 h-2 bg-brand-teal/15 rounded-full blur-xs animate-bubble-slow [animation-delay:4s]" />
       </div>
 
-      {/* Subtle Aabshar bottle watermark floating behind map details */}
-      <div className="absolute left-[-5%] top-[25%] opacity-15 sm:opacity-20 pointer-events-none select-none z-0">
-        <img
-          src={bottleImage}
-          alt="Delivery Route Purity Map"
-          className="h-[550px] w-auto animate-float object-contain filter blur-xs -rotate-12"
-          referrerPolicy="no-referrer"
-        />
+      {/* Stylized Illustrated Delivery Route Purity Map */}
+      <div className="absolute left-[-10%] md:left-[2%] top-[15%] md:top-[20%] opacity-20 md:opacity-30 pointer-events-none select-none z-0 w-[300px] sm:w-[450px] h-[300px] sm:h-[450px] flex items-center justify-center">
+        <svg
+          viewBox="0 0 500 500"
+          className="w-full h-full text-brand-teal/40 drop-shadow-[0_0_20px_rgba(2,132,199,0.15)]"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          {/* Pulsing Backlight */}
+          <circle cx="250" cy="250" r="180" fill="url(#mapGlow)" opacity="0.3" className="animate-pulse" />
+          
+          <defs>
+            <radialGradient id="mapGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stopColor="#0284c7" stopOpacity="0.5" />
+              <stop offset="100%" stopColor="#0284c7" stopOpacity="0" />
+            </radialGradient>
+          </defs>
+
+          {/* Connection Pathways */}
+          <path
+            d="M 300,280 Q 340,200 350,150"
+            stroke="currentColor"
+            strokeWidth="3"
+            strokeDasharray="8,8"
+            fill="none"
+            className="animate-[dash_15s_linear_infinite]"
+          />
+          <path
+            d="M 300,280 Q 210,260 150,220"
+            stroke="currentColor"
+            strokeWidth="3"
+            strokeDasharray="8,8"
+            fill="none"
+            className="animate-[dash_12s_linear_infinite]"
+          />
+          <path
+            d="M 150,220 Q 230,170 350,150"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeDasharray="6,6"
+            fill="none"
+            className="animate-[dash_18s_linear_infinite]"
+          />
+
+          {/* Core Stations */}
+          {/* 1. Islamabad Station */}
+          <g className="translate-x-[350px] translate-y-[150px]">
+            <circle cx="0" cy="0" r="18" className="fill-brand-teal/20 stroke-brand-teal stroke-1 animate-ping" />
+            <circle cx="0" cy="0" r="10" className="fill-brand-teal/40 stroke-white stroke-2" />
+            <circle cx="0" cy="0" r="4" className="fill-emerald-500" />
+            <text x="18" y="5" className="fill-slate-900 font-sans text-xs font-black tracking-wider text-shadow">ISLAMABAD HQ</text>
+          </g>
+
+          {/* 2. Rawalpindi Station */}
+          <g className="translate-x-[300px] translate-y-[280px]">
+            <circle cx="0" cy="0" r="18" className="fill-brand-teal/20 stroke-brand-teal stroke-1 animate-ping [animation-delay:1s]" />
+            <circle cx="0" cy="0" r="10" className="fill-brand-teal/40 stroke-white stroke-2" />
+            <circle cx="0" cy="0" r="4" className="fill-emerald-500" />
+            <text x="18" y="5" className="fill-slate-900 font-sans text-xs font-black tracking-wider text-shadow">RAWALPINDI HUB</text>
+          </g>
+
+          {/* 3. Fateh Jang Depot */}
+          <g className="translate-x-[150px] translate-y-[220px]">
+            <circle cx="0" cy="0" r="18" className="fill-brand-teal/20 stroke-brand-teal stroke-1 animate-ping [animation-delay:2s]" />
+            <circle cx="0" cy="0" r="10" className="fill-brand-teal/40 stroke-white stroke-2" />
+            <circle cx="0" cy="0" r="4" className="fill-emerald-500" />
+            <text x="-120" y="5" className="fill-slate-900 font-sans text-xs font-black tracking-wider text-shadow">FATEH JANG DEPOT</text>
+          </g>
+
+          {/* Regional Lines decoration */}
+          <circle cx="100" cy="100" r="4" fill="currentColor" opacity="0.4" />
+          <line x1="100" y1="100" x2="150" y2="220" stroke="currentColor" strokeWidth="1" strokeDasharray="3,3" opacity="0.3" />
+          <circle cx="420" cy="320" r="4" fill="currentColor" opacity="0.4" />
+          <line x1="300" y1="280" x2="420" y2="320" stroke="currentColor" strokeWidth="1" strokeDasharray="3,3" opacity="0.3" />
+        </svg>
       </div>
 
       {/* Grid overlay */}

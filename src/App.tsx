@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import BottomNav from './components/BottomNav';
 import { motion, AnimatePresence } from 'motion/react';
+import { Droplet, ShieldCheck, Truck } from 'lucide-react';
 
 export default function App() {
   const [selectedSize, setSelectedSize] = useState('500ml');
@@ -75,10 +76,19 @@ export default function App() {
                   Perfectly Balanced Premium Minerals for Daily Hydration
                 </p>
               </div>
-              <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-8 gap-y-3 font-semibold text-xs sm:text-sm text-slate-700">
-                <span className="flex items-center gap-2">💧 Balanced Essential Minerals</span>
-                <span className="flex items-center gap-2">✅ WHO Compliant Quality</span>
-                <span className="flex items-center gap-2">🚚 Chilled Logistic Fleet</span>
+              <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-8 gap-y-3 font-bold text-xs sm:text-sm text-slate-800">
+                <span className="flex items-center gap-2">
+                  <Droplet className="w-4 h-4 text-brand-teal animate-pulse" />
+                  <span>Balanced Essential Minerals</span>
+                </span>
+                <span className="flex items-center gap-2">
+                  <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                  <span>WHO Compliant Quality</span>
+                </span>
+                <span className="flex items-center gap-2">
+                  <Truck className="w-4 h-4 text-sky-600" />
+                  <span>Chilled Logistic Fleet</span>
+                </span>
               </div>
             </div>
           </div>
