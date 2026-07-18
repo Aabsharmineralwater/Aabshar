@@ -62,14 +62,7 @@ export default function Navbar({ onOrderClick }: NavbarProps) {
     setTimeout(() => {
       const element = document.querySelector(href);
       if (element) {
-        const headerOffset = isScrolled ? 75 : 110;
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-        
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }, 200);
   };

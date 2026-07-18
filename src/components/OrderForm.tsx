@@ -85,7 +85,11 @@ export default function OrderForm({ selectedSize, onSizeChange }: OrderFormProps
       setIsSubmitted(true);
       
       const encoded = encodeURIComponent(message);
-      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`, '_blank');
+      try {
+        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`, '_blank');
+      } catch (err) {
+        console.error("Popup/window.open blocked by sandboxed environment", err);
+      }
     }, 1200);
   };
 

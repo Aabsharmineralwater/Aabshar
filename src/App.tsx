@@ -17,21 +17,15 @@ export default function App() {
   const [selectedSize, setSelectedSize] = useState('500ml');
 
   const scrollToSection = (id: string) => {
-    const el = document.querySelector(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const element = document.querySelector(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
   const handleOrderProduct = (size: string) => {
-    const WHATSAPP_NUMBER = '923051999897';
-    let message = '';
-    if (size === '500ml' || size === '500 mL') {
-      message = `Hi Aabshar! 💧\nI want to order the 500ml Mineral Water Bottles.\nPlease share pricing and delivery details.`;
-    } else {
-      message = `Hi Aabshar! 💧\nI want to order the 1.5 Litre Mineral Water Bottles.\nPlease share pricing and delivery details.`;
-    }
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
+    setSelectedSize(size === '500ml' ? '500ml' : '1.5L');
+    scrollToSection('#contact');
   };
 
   return (
@@ -48,19 +42,11 @@ export default function App() {
 
       <div className="relative z-10 flex flex-col min-h-screen pb-16 md:pb-0">
         {/* Navbar */}
-        <Navbar onOrderClick={() => {
-          const WHATSAPP_NUMBER = '923051999897';
-          const msg = `Hi Aabshar! 👋\nI want to place an order.\nPlease assist me.`;
-          window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
-        }} />
+        <Navbar onOrderClick={() => scrollToSection('#contact')} />
 
         {/* Hero Section */}
         <Hero
-          onOrderClick={() => {
-            const WHATSAPP_NUMBER = '923051999897';
-            const msg = `Hi Aabshar! 💧\nI saw your website and want to place an order.\nPlease share details about your 500ml and 1.5L bottles.`;
-            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
-          }}
+          onOrderClick={() => scrollToSection('#contact')}
           onExploreClick={() => scrollToSection('#products')}
         />
 
