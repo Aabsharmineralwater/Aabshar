@@ -166,6 +166,11 @@ export default function Footer({ onLinkClick }: FooterProps) {
           <p className="font-sans text-slate-400">
             © 2026 Aabshar Mineral Water. All Rights Reserved.
           </p>
+          <div className="flex items-center gap-4 text-slate-400">
+            <button onClick={() => handleLinkClick('#privacy')} className="hover:text-brand-teal transition-colors cursor-pointer bg-transparent border-0 py-0">Privacy Policy</button>
+            <span className="text-white/10">|</span>
+            <button onClick={() => handleLinkClick('#terms')} className="hover:text-brand-teal transition-colors cursor-pointer bg-transparent border-0 py-0">Terms & Conditions</button>
+          </div>
           <p className="flex items-center gap-1 font-medium text-slate-450">
             Made with <span className="text-teal-500 animate-pulse">💧</span> in Pakistan
           </p>

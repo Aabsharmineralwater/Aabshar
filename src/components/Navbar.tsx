@@ -5,9 +5,10 @@ import aabsharLogo from '../assets/images/regenerated_image_1779783054758.png';
 
 interface NavbarProps {
   onOrderClick: () => void;
+  onLinkClick: (href: string) => void;
 }
 
-export default function Navbar({ onOrderClick }: NavbarProps) {
+export default function Navbar({ onOrderClick, onLinkClick }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('#hero');
@@ -57,14 +58,7 @@ export default function Navbar({ onOrderClick }: NavbarProps) {
 
   const handleLinkClick = (href: string) => {
     setIsOpen(false);
-    
-    // Smooth scroll offset to clear the sticky header
-    setTimeout(() => {
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }, 200);
+    onLinkClick(href);
   };
 
   return (

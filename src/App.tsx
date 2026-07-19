@@ -10,22 +10,67 @@ import OrderForm from './components/OrderForm';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import BottomNav from './components/BottomNav';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import TermsAndConditions from './components/TermsAndConditions';
 import { motion, AnimatePresence } from 'motion/react';
 import { Droplet, ShieldCheck, Truck } from 'lucide-react';
 
 export default function App() {
   const [selectedSize, setSelectedSize] = useState('500ml');
+  const [page, setPage] = useState<'home' | 'privacy' | 'terms'>('home');
 
-  const scrollToSection = (id: string) => {
-    const element = document.querySelector(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash === '#privacy' || hash === '#/privacy') {
+        setPage('privacy');
+        window.scrollTo({ top: 0 });
+      } else if (hash === '#terms' || hash === '#/terms') {
+        setPage('terms');
+        window.scrollTo({ top: 0 });
+      } else {
+        setPage('home');
+        if (hash && hash !== '#' && hash !== '#/') {
+          // Allow some time for rendering before scrolling
+          setTimeout(() => {
+            const element = document.querySelector(hash);
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }, 150);
+        }
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    handleHashChange(); // Run initial check
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  const handleLinkClick = (href: string) => {
+    if (href === '#privacy' || href === '#/privacy') {
+      window.location.hash = '#/privacy';
+    } else if (href === '#terms' || href === '#/terms') {
+      window.location.hash = '#/terms';
+    } else {
+      window.location.hash = href;
+      if (page !== 'home') {
+        setPage('home');
+      }
+      setTimeout(() => {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else if (href === '#hero' || href === '#') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }, 150);
     }
   };
 
   const handleOrderProduct = (size: string) => {
     setSelectedSize(size === '500ml' ? '500ml' : '1.5L');
-    scrollToSection('#contact');
+    handleLinkClick('#contact');
   };
 
   return (
@@ -42,75 +87,86 @@ export default function App() {
 
       <div className="relative z-10 flex flex-col min-h-screen pb-16 md:pb-0">
         {/* Navbar */}
-        <Navbar onOrderClick={() => scrollToSection('#contact')} />
-
-        {/* Hero Section */}
-        <Hero
-          onOrderClick={() => scrollToSection('#contact')}
-          onExploreClick={() => scrollToSection('#products')}
+        <Navbar 
+          onOrderClick={() => handleLinkClick('#contact')} 
+          onLinkClick={handleLinkClick}
         />
 
-        {/* Trust signal stats banner */}
-        <div className="bg-gradient-to-r from-white/60 via-sky-50/45 to-white/60 backdrop-blur-md border-y border-white/50 py-6 sm:py-8 font-sans overflow-hidden shadow-inner-light">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-              <div className="space-y-1">
-                <span className="inline-block px-2.5 py-0.5 rounded bg-sky-200/50 text-brand-teal text-[10px] font-bold uppercase tracking-widest">
-                  Quality Guaranteed
-                </span>
-                <p className="font-serif text-lg sm:text-xl font-bold text-slate-900">
-                  Perfectly Balanced Premium Minerals for Daily Hydration
-                </p>
-              </div>
-              <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-8 gap-y-3 font-bold text-xs sm:text-sm text-slate-800">
-                <span className="flex items-center gap-2">
-                  <Droplet className="w-4 h-4 text-brand-teal animate-pulse" />
-                  <span>Balanced Essential Minerals</span>
-                </span>
-                <span className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                  <span>WHO Compliant Quality</span>
-                </span>
-                <span className="flex items-center gap-2">
-                  <Truck className="w-4 h-4 text-sky-600" />
-                  <span>Chilled Logistic Fleet</span>
-                </span>
+        {page === 'home' ? (
+          <>
+            {/* Hero Section */}
+            <Hero
+              onOrderClick={() => handleLinkClick('#contact')}
+              onExploreClick={() => handleLinkClick('#products')}
+            />
+
+            {/* Trust signal stats banner */}
+            <div className="bg-gradient-to-r from-white/60 via-sky-50/45 to-white/60 backdrop-blur-md border-y border-white/50 py-6 sm:py-8 font-sans overflow-hidden shadow-inner-light">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+                  <div className="space-y-1">
+                    <span className="inline-block px-2.5 py-0.5 rounded bg-sky-200/50 text-brand-teal text-[10px] font-bold uppercase tracking-widest">
+                      Quality Guaranteed
+                    </span>
+                    <p className="font-serif text-lg sm:text-xl font-bold text-slate-900">
+                      Perfectly Balanced Premium Minerals for Daily Hydration
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-8 gap-y-3 font-bold text-xs sm:text-sm text-slate-800">
+                    <span className="flex items-center gap-2">
+                      <Droplet className="w-4 h-4 text-brand-teal animate-pulse" />
+                      <span>Balanced Essential Minerals</span>
+                    </span>
+                    <span className="flex items-center gap-2">
+                      <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                      <span>WHO Compliant Quality</span>
+                    </span>
+                    <span className="flex items-center gap-2">
+                      <Truck className="w-4 h-4 text-sky-600" />
+                      <span>Chilled Logistic Fleet</span>
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
 
-        {/* Product Catalogue side-by-side cards */}
-        <Products onOrderProduct={handleOrderProduct} />
+            {/* Product Catalogue side-by-side cards */}
+            <Products onOrderProduct={handleOrderProduct} />
 
-        {/* B2B Private Custom Label Branding Option */}
-        <B2B onQuoteClick={() => {
-          // Simply accept completed inquiry
-        }} />
+            {/* B2B Private Custom Label Branding Option */}
+            <B2B onQuoteClick={() => {
+              // Simply accept completed inquiry
+            }} />
 
-        {/* USP / Why Aabshar Section (About Us) */}
-        <WhyUs />
+            {/* USP / Why Aabshar Section (About Us) */}
+            <WhyUs />
 
-        {/* Map tracker Area Delivery options */}
-        <Delivery />
+            {/* Map tracker Area Delivery options */}
+            <Delivery />
 
-        {/* Reviews Testimonials Social Proof */}
-        <Testimonials />
+            {/* Reviews Testimonials Social Proof */}
+            <Testimonials />
 
-        {/* Interactive Ordering Form / Contact */}
-        <OrderForm
-          selectedSize={selectedSize}
-          onSizeChange={(size) => setSelectedSize(size)}
-        />
+            {/* Interactive Ordering Form / Contact */}
+            <OrderForm
+              selectedSize={selectedSize}
+              onSizeChange={(size) => setSelectedSize(size)}
+            />
+          </>
+        ) : page === 'privacy' ? (
+          <PrivacyPolicy onBackToHome={() => handleLinkClick('#hero')} />
+        ) : (
+          <TermsAndConditions onBackToHome={() => handleLinkClick('#hero')} />
+        )}
 
         {/* Footer */}
-        <Footer onLinkClick={scrollToSection} />
+        <Footer onLinkClick={handleLinkClick} />
 
         {/* Pulsing floating WhatsApp helper bottom-right */}
         <WhatsAppButton />
 
         {/* Fixed Mobile Bottom Navigation */}
-        <BottomNav onLinkClick={scrollToSection} />
+        <BottomNav onLinkClick={handleLinkClick} />
       </div>
 
     </div>

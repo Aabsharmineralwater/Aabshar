@@ -122,6 +122,7 @@ export default function Products({ onOrderProduct }: ProductsProps) {
                 <img
                   src={prod.image}
                   alt={`${prod.name} - ${prod.sizeBadge}`}
+                  loading="lazy"
                   className={`h-72 sm:h-80 w-auto object-contain transition-transform duration-500 group-hover:scale-105 pointer-events-none drop-shadow-[0_15px_25px_rgba(2,132,199,0.1)] ${prod.imgScale}`}
                   referrerPolicy="no-referrer"
                 />
