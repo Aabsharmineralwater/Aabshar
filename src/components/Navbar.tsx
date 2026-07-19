@@ -209,7 +209,7 @@ export default function Navbar({ onOrderClick }: NavbarProps) {
                   <div className="flex items-center gap-1">
                     <img 
                       src={aabsharLogo} 
-                      alt="Aabshar Logo" 
+                      alt="Aabshar Mineral Water Logo" 
                       className="h-11 w-auto"
                       referrerPolicy="no-referrer"
                     />

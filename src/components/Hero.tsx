@@ -51,9 +51,9 @@ export default function Hero({ onOrderClick, onExploreClick }: HeroProps) {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="font-display text-5xl sm:text-6xl lg:text-7.5xl font-extrabold text-white tracking-tight leading-none mb-6 text-shadow-heading drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]"
             >
-              Pure. Natural.<br />
+              Aabshar<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-teal to-brand-aqua">
-                Refreshing.
+                Mineral Water
               </span>
             </motion.h1>
 
@@ -63,7 +63,7 @@ export default function Hero({ onOrderClick, onExploreClick }: HeroProps) {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="font-sans text-sky-100/90 text-lg sm:text-xl font-normal leading-relaxed mb-8 max-w-xl"
             >
-              Premium balanced mineral water designed for a healthy, active modern lifestyle — delivered fresh and cold directly to your doorstep.
+              Aabshar Mineral Water is a trusted bottled water brand dedicated to providing pure, safe, and refreshing drinking water. We maintain high standards of quality, hygiene, and customer satisfaction to ensure every bottle delivers freshness and trust.
             </motion.p>
 
             {/* CTA action buttons */}
